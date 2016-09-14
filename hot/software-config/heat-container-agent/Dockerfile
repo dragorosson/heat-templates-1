@@ -15,8 +15,9 @@ ADD ./scripts/heat-config-notify \
   /usr/bin/heat-config-notify
 
 ADD ./scripts/configure_container_agent.sh /tmp/
+
 RUN chmod 700 /tmp/configure_container_agent.sh ; \
-  /tmp/configure_container_agent.sh
+  bash /tmp/configure_container_agent.sh
 
 #create volumes to share the host directories
 VOLUME [ "/var/lib/cloud"]
